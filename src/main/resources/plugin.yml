@@ -1,0 +1,9 @@
+name: ArisRTPQ
+version: 1.0
+main: me.arismc.ArisRTPQ
+api-version: '1.20'
+folia-supported: true
+commands:
+  rtpqueue:
+    description: Mở menu hàng chờ RTP.
+    aliases: [rtpq]
