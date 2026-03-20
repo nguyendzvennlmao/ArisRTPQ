@@ -1,0 +1,13 @@
+name: ArisRTPQ
+version: 1.0
+main: me.arismc.ArisRTPQ
+api-version: '1.20'
+description: Plugin Random Teleport Queue dành cho hệ thống Folia - Aris Network.
+author: ArisMC
+folia-supported: true
+
+commands:
+  rtpqueue:
+    description: Mở menu hàng chờ RTP.
+    aliases: [rtpq, rtp]
+    usage: /<command> [reload]
