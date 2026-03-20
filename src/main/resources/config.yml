@@ -1,0 +1,55 @@
+settings:
+  max-radius: 5000
+  distance-between-players: 0
+  allowed-worlds:
+    - world
+
+gui:
+  title: "&#ff0812&lᴀʀɪs ɴᴇᴛᴡᴏʀᴋ &8- &#facc15&lʀᴛᴘǫᴜᴇᴜᴇ"
+  size: 27
+  items:
+    leave:
+      slot: 10
+      material: "RED_STAINED_GLASS_PANE"
+      name: "&#ff0812&lᴄᴀɴᴄᴇʟ"
+      lore:
+        - "&fClick to cancel"
+    join:
+      slot: 16
+      material: "GREEN_STAINED_GLASS_PANE"
+      name: "&asᴇᴀʀᴄʜ"
+      lore:
+        - "&fClick to find a match"
+    world:
+      slot: 12
+      material: "GRASS_BLOCK"
+      name: "&#facc15&lᴡᴏʀʟᴅ"
+      lore:
+        - "&f%world%"
+    queue:
+      slot: 13
+      material: "COMPASS"
+      name: "&#facc15&lǫᴜᴇᴜᴇ ᴘʟᴀʏᴇʀs"
+      lore:
+        - "&7Queue &f%count%/2"
+    ping:
+      slot: 14
+      material: "FEATHER"
+      name: "&#facc15&lʀᴇɢɪᴏɴ"
+      lore:
+        - "&7Vietnam: (&#facc15%ping%ms)"
+    decor:
+      material: "BLACK_STAINED_GLASS_PANE"
+      name: " "
+      slots: [0,1,2,3,4,5,6,7,8,9,11,15,17,18,19,20,21,22,23,24,25,26]
+
+messages:
+  prefix: "&#ff0812&lᴀʀɪsʀᴛᴘǫ &8» "
+  joined: "&fBạn đã &#facc15tham gia &fhàng chờ!"
+  already-in-queue: "&cBạn đã ở trong hàng chờ trước đó rồi!"
+  left: "&fBạn đã &#ff0812rời khỏi &fhàng chờ!"
+  not-in-queue: "&cBạn chưa tham gia hàng chờ."
+  no-safe-location: "&cKhông tìm thấy vị trí an toàn, vui lòng thử lại sau!"
+  countdown-msg: "&fDịch chuyển trong: &#ff0812%time%s"
+  teleport-subtitle: "&#ff0812ʀᴛᴘǫᴜᴇᴜᴇ"
+  reload: "&aĐã tải lại cấu hình!"
