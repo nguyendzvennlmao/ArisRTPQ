@@ -22,6 +22,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.List;
 import java.util.Random;
 import java.util.UUID;
@@ -39,6 +40,28 @@ public class ArisRTPQ extends JavaPlugin implements Listener {
     @Override
     public void onEnable() {
         saveDefaultConfig();
+        
+        // --- KHỞI TẠO KIỂM TRA LICENSE BẢO MẬT ---
+        String key = getConfig().getString("license-key", "EMPTY");
+        
+        if (!checkLicense(key)) {
+            // Thông báo lỗi màu đỏ (&#ff0812)
+            Bukkit.getConsoleSender().sendMessage(format("&#ff0812[ArisRTPQ] ================================"));
+            Bukkit.getConsoleSender().sendMessage(format("&#ff0812[ArisRTPQ] TRẠNG THÁI: CHƯA KÍCH HOẠT"));
+            Bukkit.getConsoleSender().sendMessage(format("&#ff0812[ArisRTPQ] Vui lòng nhập đúng License Key 17253."));
+            Bukkit.getConsoleSender().sendMessage(format("&#ff0812[ArisRTPQ] ================================"));
+            
+            getServer().getPluginManager().disablePlugin(this);
+            return;
+        }
+        
+        // Thông báo thành công màu vàng (&#facc15)
+        Bukkit.getConsoleSender().sendMessage(format("&#facc15[ArisRTPQ] ================================"));
+        Bukkit.getConsoleSender().sendMessage(format("&#facc15[ArisRTPQ] TRẠNG THÁI: ĐÃ KÍCH HOẠT"));
+        Bukkit.getConsoleSender().sendMessage(format("&#facc15[ArisRTPQ] Hệ thống Aris Network sẵn sàng."));
+        Bukkit.getConsoleSender().sendMessage(format("&#facc15[ArisRTPQ] ================================"));
+        // --- KẾT THÚC KIỂM TRA LICENSE ---
+
         getServer().getPluginManager().registerEvents(this, this);
         getCommand("rtpqueue").setExecutor(new RTPQCommand());
 
@@ -51,6 +74,15 @@ public class ArisRTPQ extends JavaPlugin implements Listener {
                 }
             }
         }, 1, 1, TimeUnit.SECONDS);
+    }
+
+    private boolean checkLicense(String key) {
+        if (key == null || key.isEmpty()) return false;
+        // Mã hóa key người dùng nhập sang Base64
+        String encoded = Base64.getEncoder().encodeToString(key.getBytes());
+        // So sánh với chuỗi "ARIS-RTPQ-17253" đã được mã hóa sẵn
+        // Giúp che giấu key thật khi bị decompile code
+        return encoded.equals("QVJJUy1SVFBRLTE3MjUz");
     }
 
     public String format(String msg) {
@@ -86,7 +118,6 @@ public class ArisRTPQ extends JavaPlugin implements Listener {
     private void openMenu(Player player) {
         Inventory inv = Bukkit.createInventory(null, 27, format(getConfig().getString("gui.title")));
         
-        // Chỉ load các item chính, không load decor
         inv.setItem(10, createItem(Material.valueOf(getConfig().getString("gui.items.leave.material")), getConfig().getString("gui.items.leave.name"), getConfig().getStringList("gui.items.leave.lore")));
         inv.setItem(16, createItem(Material.valueOf(getConfig().getString("gui.items.join.material")), getConfig().getString("gui.items.join.name"), getConfig().getStringList("gui.items.join.lore")));
         inv.setItem(12, createItem(Material.valueOf(getConfig().getString("gui.items.world.material")), getConfig().getString("gui.items.world.name"), List.of(getConfig().getStringList("gui.items.world.lore").get(0).replace("%world%", player.getWorld().getName()))));
@@ -218,4 +249,4 @@ public class ArisRTPQ extends JavaPlugin implements Listener {
             return true;
         }
     }
-  }
+    }
