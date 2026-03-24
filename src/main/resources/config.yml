@@ -4,6 +4,12 @@ settings:
   max-radius: 3000
   player-distance: 5
   countdown-seconds: 5
+  join-sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+  leave-sound: "ENTITY_VILLAGER_NO"
+  gui-click: "UI_BUTTON_CLICK"
+  countdown-tick: "BLOCK_NOTE_BLOCK_CHIME"
+  teleport-success: "ENTITY_ENDERMAN_TELEPORT"
+  error: "ENTITY_VILLAGER_NO"
 
 messages:
   prefix: "&#facc15[ᴀʀɪs ʀᴛᴘ] "
@@ -35,7 +41,7 @@ messages:
     text: "&#facc15%player% &fđã ᴛʜᴀᴍ ɢɪᴀ ʜàɴɢ ᴄʜờ ʀᴛᴘ"
     chat: true
   world-set:
-    text: "&aĐã set &#facc15%world% &fthành điểm rtpqueue chính đã loại bỏ world cũ"
+    text: "&aĐã set &#facc15%world% &fthành điểm rtpqueue chính"
     chat: true
   world-not-found:
     text: "&#ff0812Không tìm thấy thế giới: &f%world%"
@@ -59,24 +65,30 @@ gui:
       slot: 10
       material: RED_STAINED_GLASS_PANE
       name: "&#ff0812ᴄᴀɴᴄᴇʟ"
-      lore: "&fᴄʟɪᴄᴋ để ʀờɪ ʜàɴɢ ᴄʜờ"
+      lore:
+        - "&fᴄʟɪᴄᴋ để ʀờɪ ʜàɴɢ ᴄʜờ"
     world:
       slot: 12
       material: GRASS_BLOCK
       name: "&#facc15ᴡᴏʀʟᴅ"
-      lore: "&fᴛʜế ɢɪớɪ: &#facc15%world%"
+      lore:
+        - "&fᴛʜế ɢɪớɪ: &#facc15%world%"
     queue:
       slot: 13
       material: COMPASS
       name: "&#facc15ǫᴜᴇᴜᴇ"
-      lore: "&fʜàɴɢ ᴄʜờ: &#facc15%count%/2"
+      lore:
+        - "&fʜàɴɢ ᴄʜờ: &#facc15%count%/2"
+        - "&7Đang tìm đối thủ..."
     stats:
       slot: 14
       material: IRON_SWORD
       name: "&#facc15sᴛᴀᴛs"
-      lore: "&fᴛʜôɴɢ ᴛɪɴ ᴄủᴀ ʙạɴ"
+      lore:
+        - "&fᴛʜôɴɢ ᴛɪɴ ᴄủᴀ ʙạɴ"
     confirm:
       slot: 16
       material: LIME_STAINED_GLASS_PANE
       name: "&2ᴄᴏɴғɪʀᴍ"
-      lore: "&fᴄʟɪᴄᴋ để ᴛʜᴀᴍ ɢɪᴀ ʀᴛᴘ 1ᴠs1"
+      lore:
+        - "&fᴄʟɪᴄᴋ để ᴛʜᴀᴍ ɢɪᴀ ʀᴛᴘ 1ᴠs1"
