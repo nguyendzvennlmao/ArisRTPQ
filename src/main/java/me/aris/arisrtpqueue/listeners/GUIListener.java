@@ -5,7 +5,6 @@ import me.aris.arisrtpqueue.utils.ColorUtils;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Sign;
-import org.bukkit.block.Side;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -47,7 +46,7 @@ public class GUIListener implements Listener {
         
         for (int i = 0; i < 4; i++) {
             String line = (lines != null && i < lines.size()) ? ColorUtils.format(lines.get(i)) : "";
-            sign.getSide(Side.FRONT).setLine(i, line);
+            sign.setLine(i, line);
         }
 
         p.openSign(sign);
