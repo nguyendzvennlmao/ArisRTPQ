@@ -1,0 +1,29 @@
+prefix: "&8[&bRTPQ&8] "
+
+sign-gui:
+  - ""
+  - "^^^^^^^^^^^^^^^"
+  - "Nhập tên người"
+  - "chơi vào dòng 1"
+
+chat-joined-queue: "&aBạn đã tham gia hàng chờ!"
+chat-left-queue: "&cBạn đã rời hàng chờ!"
+chat-already-in-queue: "&eBạn đã ở trong hàng chờ rồi."
+chat-teleporting-in: "&eDịch chuyển sau %time% giây..."
+chat-no-safe-location: "&cKhông tìm thấy vị trí an toàn, đang tìm lại..."
+chat-no-permission: "&cBạn không có quyền!"
+chat-player-not-found: "&cKhông tìm thấy người chơi này!"
+chat-invite-sent: "&aĐã gửi lời mời đến %player%!"
+chat-invite-received: "&b%player% &7đã mời bạn tham gia hàng chờ RTP! &a&l[CHẤP NHẬN]"
+chat-invite-hover: "&7Nhấp để đồng ý tham gia"
+chat-no-invite: "&cBạn không có lời mời nào!"
+chat-reload-success: "&aĐã tải lại cấu hình thành công!"
+
+actionbar-joined-queue: "&aBạn đã tham gia hàng chờ!"
+actionbar-waiting: "&eĐang chờ thêm %need% người để bắt đầu chiến đấu..."
+actionbar-left-queue: "&cBạn đã rời hàng chờ!"
+actionbar-teleporting-in: "&eDịch chuyển sau %time% giây..."
+
+success-title: "&a&lDịch chuyển thành công"
+success-subtitle: "&bBắt đầu chiến đấu"
+success-chat: "&bBạn đã được đưa đến khu vực an toàn!"
