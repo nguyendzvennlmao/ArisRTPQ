@@ -2,11 +2,10 @@ package me.aris.arisrtpqueue.listeners;
 
 import me.aris.arisrtpqueue.ArisRTPQueue;
 import me.aris.arisrtpqueue.utils.ColorUtils;
-import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Sign;
-import org.bukkit.block.side.Side;
+import org.bukkit.block.Side;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -39,7 +38,7 @@ public class GUIListener implements Listener {
 
     private void openInviteSign(Player p) {
         Location loc = p.getLocation().clone();
-        loc.setY(p.getWorld().getMinHeight()); 
+        loc.setY((double) p.getWorld().getMinHeight()); 
 
         p.sendBlockChange(loc, Material.OAK_SIGN.createBlockData());
 
@@ -47,7 +46,7 @@ public class GUIListener implements Listener {
         List<String> lines = ArisRTPQueue.getInstance().getMessages().getStringList("sign-gui");
         
         for (int i = 0; i < 4; i++) {
-            String line = i < lines.size() ? ColorUtils.format(lines.get(i)) : "";
+            String line = (lines != null && i < lines.size()) ? ColorUtils.format(lines.get(i)) : "";
             sign.getSide(Side.FRONT).setLine(i, line);
         }
 
@@ -61,4 +60,4 @@ public class GUIListener implements Listener {
             e.getPlayer().performCommand("rtpq invite " + name);
         }
     }
-                }
+            }
