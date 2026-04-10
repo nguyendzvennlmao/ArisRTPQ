@@ -1,0 +1,10 @@
+name: ArisRTPQueue
+version: 1.3
+main: me.aris.arisrtpqueue.ArisRTPQueue
+api-version: '1.21'
+author: VennLMAO
+folia-supported: true
+commands:
+  rtpq:
+    aliases: [rtpqueue]
+    description: "Lệnh của RTP Queue"
