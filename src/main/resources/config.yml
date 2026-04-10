@@ -1,0 +1,54 @@
+settings:
+  world: "world"
+  rtp-range: 5000
+  min-players: 2
+  countdown-seconds: 5
+  max-attempts: 30
+
+sounds:
+  gui-click: "UI_BUTTON_CLICK"
+  join-queue: "ENTITY_EXPERIENCE_ORB_PICKUP"
+  leave-queue: "BLOCK_ANVIL_BREAK"
+  countdown-tick: "BLOCK_NOTE_BLOCK_PLING"
+  teleport-success: "ENTITY_PLAYER_LEVELUP"
+  teleport-error: "ENTITY_VILLAGER_NO"
+  reload: "ENTITY_PLAYER_LEVELUP"
+  invite-sent: "ENTITY_WIND_CHARGE_THROW"
+  invite-received: "BLOCK_BELL_USE"
+
+gui:
+  title: "&8ǫᴜᴇᴜᴇ ᴄᴏɴꜰɪʀᴍ"
+  size: 27
+  buttons:
+    cancel:
+      slot: 10
+      material: RED_STAINED_GLASS_PANE
+      name: "&#FC0000ᴄᴀɴᴄᴇʟ"
+      lore:
+        - "&fNhấp để rời hàng chờ"
+    wait-time:
+      slot: 12
+      material: COMPASS
+      name: "&#00FC00ᴡᴀɪᴛ ᴛɪᴍᴇ"
+      lore:
+        - "&7Chờ: <1 phút"
+        - "&7Đang chờ: %queue_size%/2 người"
+    invite:
+      slot: 13
+      material: PAPER
+      name: "&#00FC00ɪɴᴠɪᴛᴇ ᴘʟᴀʏᴇʀ"
+      lore:
+        - "&7Nhấp để mời người chơi"
+    region:
+      slot: 14
+      material: FEATHER
+      name: "&#00FC00ʀᴇɢɪᴏɴ"
+      lore:
+        - "&7Khu vực: &bAsia"
+        - "&7Ping: &b%ping%ms"
+    search:
+      slot: 16
+      material: LIME_STAINED_GLASS_PANE
+      name: "&aѕᴇᴀʀᴄʜ"
+      lore:
+        - "&7Nhấp để tìm trận"
